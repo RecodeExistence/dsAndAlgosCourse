@@ -1,5 +1,5 @@
 // Challenge:  given an array of values, find the first recurring value in that array.  
-// This version is O(n) at best.  It's a fairly efficient, but still naieve approach. 
+// Apparently I skipped the o(n^2) approach entirely.  No nested loops = win.  
 const arrNums = [2,5,1,2,3,5,1,2,4];
 const arrNums2 = [2,1,1,2,3,5,1,2,4]; 
 const arrNums3 = [2,3,4,5]; 
