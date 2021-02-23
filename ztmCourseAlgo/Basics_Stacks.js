@@ -67,6 +67,8 @@ traverseTo(vIndexToTraverseTo) {
         return traversalNode; 
     }
 
+isEmpty = () => this.length === 0 ? true : false; 
+
 } 
 
 const newStack = new Stack(); 
