@@ -22,15 +22,14 @@ push(value) {
     if(this.length === 0) {
         this.bottom = tempNode;
         this.top = tempNode; 
+        this.bottom.next = this.top; 
     } else {
-        this.bottom.next = this.top;  
         this.top.next = tempNode; 
         this.top = tempNode; 
     }
     this.length++; 
     return this;  
 }
-
 pop() {
     let replaceNode = this.bottom;   
     let returnNode = this.top; 
@@ -48,26 +47,32 @@ pop() {
     return returnNode;  
 }
 
-printList() {  
-}
-
-traverseList(traverseToIndex) {
-    let traversalNode = this.bottom; 
-    let count = 0;  
-
-    while(count < traverseToIndex) {
-        if(count === traverseToIndex) {
-            return traversalNode; 
-        } else {
+printList() {
+    let arrValues = []; 
+    let traversalNode = this.bottom;
+        while(traversalNode !== null) {
+            arrValues.push(traversalNode.value);
             traversalNode = traversalNode.next;  
-            count++;  
         }
-    } 
-}
-}
+        return arrValues;    
+    }
 
+traverseTo(vIndexToTraverseTo) {
+    let count = 0;  
+    let traversalNode = this.bottom; 
+        while(count !== vIndexToTraverseTo) {
+            traversalNode = traversalNode.next;  
+            count++; 
+        }
+        return traversalNode; 
+    }
+
+} 
 
 const newStack = new Stack(); 
 newStack.push("test");
 newStack.push("this"); 
-newStack.pop(); 
+newStack.push("one");
+newStack.push("two"); 
+console.log(newStack.printList());
+console.log(newStack.traverseTo(3)); 
