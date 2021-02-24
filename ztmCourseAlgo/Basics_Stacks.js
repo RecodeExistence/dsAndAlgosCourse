@@ -78,3 +78,4 @@ newStack.push("one");
 newStack.push("two"); 
 console.log(newStack.printList());
 console.log(newStack.traverseTo(3)); 
+
