@@ -20,7 +20,7 @@ class Queue {
         return this.first;  
     }
 
-    // Add value to the queue. - working as intended.   
+    // Add value to the queue. - veerrrry rough description below.  .   
     enqueue(value) {
         let newNode = new Node(value);
         if(this.length === 0) {
@@ -49,9 +49,9 @@ class Queue {
     }
 
     dequeue() {
-        // point this . first pointer at next front of queue (which would be null, removing the pointer to whatever value was in the front of the queue). 
+        // make the second item in the queue the current first by moving our first pointer to it.  This removes the reference to whatever was in current first place.  (How does memory deal with this?)   
         this.first = this.first.next 
-        // 
+        // then update the first.next to be null (ie, one step FOWARDS in the queue.  
         this.first.next = null;
         
         return this; 
